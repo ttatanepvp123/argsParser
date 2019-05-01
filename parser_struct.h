@@ -6,7 +6,9 @@
 enum type_arg {
     PARSER_INTEGER = 0,
     PARSER_UNSIGNED_INTEGER,
-    PARSER_STRING
+    PARSER_STRING,
+    PARSER_SET_TO_TRUE,
+    PARSER_SET_TO_FALSE
 };
 
 struct option{

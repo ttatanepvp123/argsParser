@@ -226,6 +226,10 @@ _Bool parser_parse(struct parser *parser, int argc, char *argv[]){
                     j++;
                     tmp = 1;
                     *(parser->options[i].pointer) = argv[j];
+                } else if (parser->options[i].type == PARSER_SET_TO_TRUE) {
+                    *(parser->options[i].pointer) = true;
+                } else if (parser->options[i].type == PARSER_SET_TO_FALSE) {
+                    *(parser->options[i].pointer) = false;
                 }
             }
         }
@@ -252,6 +256,10 @@ _Bool parser_parse(struct parser *parser, int argc, char *argv[]){
                                 j++;
                                 tmp = 1;
                                 *(parser->options[i].pointer) = argv[j];
+                            } else if (parser->options[i].type == PARSER_SET_TO_TRUE) {
+                                *(parser->options[i].pointer) = true;
+                            } else if (parser->options[i].type == PARSER_SET_TO_FALSE) {
+                                *(parser->options[i].pointer) = false;
                             }
                         }
                     }
